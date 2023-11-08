@@ -5,6 +5,7 @@
 
 EssentialEase adalah sahabat Anda dalam menjalani kehidupan sehari-hari yang sibuk. Dengan kemudahan belanja, pengiriman cepat, dan beragam fitur yang memudahkan, Anda dapat fokus pada hal-hal yang benar-benar penting dalam hidup Anda. Jadi, nikmati hidup tanpa stres dengan EssentialEase!
 
+![warehouse app](https://github.com/MuhRafliD/essential-ease/blob/main/assets/background-toko-online-8%20(1).jpg?raw=true)
 # Tugas 7
 ### Nomor 1
 Apa perbedaan utama antara stateless dan stateful widget dalam konteks pengembangan aplikasi Flutter?
