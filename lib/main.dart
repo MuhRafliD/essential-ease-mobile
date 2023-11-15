@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:essential_ease/menu.dart';
+import 'package:essential_ease/screens/menu.dart';
 
 void main() {
   runApp(const MyApp());
@@ -31,7 +31,7 @@ class MyApp extends StatelessWidget {
         // tested with just a hot reload.
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.white),
         appBarTheme: const AppBarTheme(
-          backgroundColor : Color.fromARGB(255, 71, 255, 68),
+          backgroundColor : Color.fromARGB(255, 0, 81, 186),
         ),
         useMaterial3: true,
       ),

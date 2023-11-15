@@ -1,11 +1,15 @@
+import 'package:essential_ease/screens/data_item.dart';
 import 'package:flutter/material.dart';
+import 'package:essential_ease/widgets/left_drawer.dart';
+import 'package:essential_ease/screens/shoplist_form.dart';
+import 'package:essential_ease/widgets/shop_card.dart';
 
 class MyHomePage extends StatelessWidget {
   MyHomePage({Key? key}) : super(key: key);
   final List<ShopItem> items = [
-    ShopItem("Lihat Item", Icons.checklist, Color.fromARGB(255, 71, 255, 68)),
-    ShopItem("Tambah Item", Icons.add_shopping_cart, Color.fromARGB(255, 71, 255, 68)),
-    ShopItem("Logout", Icons.logout, Color.fromARGB(255, 255, 68, 68)),
+    ShopItem("Lihat Item", Icons.checklist, Color.fromARGB(255, 0, 81, 186)),
+    ShopItem("Tambah Item", Icons.add_shopping_cart,Color.fromARGB(255, 255, 218, 26)),
+    ShopItem("Logout", Icons.logout,Color.fromARGB(255, 255, 26, 26)),
   ];
 
   @override
@@ -20,8 +24,10 @@ class MyHomePage extends StatelessWidget {
       appBar: AppBar(
         title: const Text(
           'Essential Ease',
+          
         ),
       ),
+      drawer: const LeftDrawer(),
       body: SingleChildScrollView(
         // Widget wrapper yang dapat discroll
         child: Padding(
@@ -33,7 +39,7 @@ class MyHomePage extends StatelessWidget {
                 padding: EdgeInsets.only(top: 10.0, bottom: 10.0),
                 // Widget Text untuk menampilkan tulisan dengan alignment center dan style yang sesuai
                 child: Text(
-                  'PBP Shop', // Text yang menandakan toko
+                  'Essential Ease', // Text yang menandakan toko
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     fontSize: 30,
@@ -63,13 +69,6 @@ class MyHomePage extends StatelessWidget {
   }
 }
 
-class ShopItem {
-  final String name;
-  final IconData icon;
-  final Color color;
-
-  ShopItem(this.name, this.icon, this.color);
-}
 
 class ShopCard extends StatelessWidget {
   final ShopItem item;
@@ -88,6 +87,15 @@ class ShopCard extends StatelessWidget {
             ..hideCurrentSnackBar()
             ..showSnackBar(SnackBar(
                 content: Text("Kamu telah menekan tombol ${item.name}!")));
+          // Navigate ke route yang sesuai (tergantung jenis tombol)
+          if(item.name == "Lihat Item"){
+            Navigator.push(context,
+                MaterialPageRoute(builder: (context) => const DataItemPage()));
+          }
+          if (item.name == "Tambah Item") {
+            Navigator.push(context,
+                MaterialPageRoute(builder: (context) => const ShopFormPage()));
+          }
         },
         child: Container(
           // Container untuk menyimpan Icon dan Text
